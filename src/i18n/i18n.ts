@@ -1,5 +1,12 @@
-import en from './en';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import resources from './resources';
 
-export const resources = {
-  en,
-} as const;
+const userLanguage = 'en';
+
+i18n.use(initReactI18next).init({
+  lng: userLanguage,
+  fallbackLng: 'en',
+  debug: false,
+  resources,
+});
