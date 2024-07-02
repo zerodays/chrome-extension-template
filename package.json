@@ -1,8 +1,9 @@
 {
-  "name": "classmate",
+  "name": "chrome-extension-template",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@9.4.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
