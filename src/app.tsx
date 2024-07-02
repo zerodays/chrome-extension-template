@@ -4,7 +4,7 @@ import './index.css';
 
 function App() {
   const { t } = useTranslation('common');
-  return <div>{t('Welcome to React')}</div>;
+  return <div>{t('welcome')}</div>;
 }
 
 export default App;

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Button } from './components/ui/button';
+import './i18n/config';
 import './index.css';
+import { InjectContent } from './inject-content';
 
 // Inits the react root inside the content of a tab
 const root = document.createElement('div');
@@ -10,10 +11,6 @@ document.body.appendChild(root);
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <div className="ex-fixed ex-bottom-0 ex-left-0 ex-right-0 ex-top-0 ex-z-50 ex-flex ex-items-center ex-justify-center">
-      <div style={{ fontSize: 100 }}>
-        <Button onClick={() => console.log('Button working')}>Button</Button>
-      </div>
-    </div>
+    <InjectContent />
   </React.StrictMode>,
 );
