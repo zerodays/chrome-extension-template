@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "name": "ClassMate",
+  "description": "TODO",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "ClassMate"
+  },
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "js": ["src/inject.tsx"],
+      "matches": ["https://*/*"]
+    }
+  ]
+}
