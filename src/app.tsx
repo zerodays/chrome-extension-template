@@ -1,8 +1,10 @@
 import 'react';
+import { useTranslation } from 'react-i18next';
 import './index.css';
 
 function App() {
-  return <div>test </div>;
+  const { t } = useTranslation('common');
+  return <div>{t('Welcome to React')}</div>;
 }
 
 export default App;
