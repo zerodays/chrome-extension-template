@@ -2,7 +2,7 @@ import 'react';
 import './index.css';
 
 function App() {
-  return <div>test</div>;
+  return <div>test </div>;
 }
 
 export default App;
