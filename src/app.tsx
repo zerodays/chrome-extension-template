@@ -1,3 +1,6 @@
+import 'react';
+import './index.css';
+
 function App() {
   return <div>test</div>;
 }

@@ -1,28 +1,16 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
 
 // Inits the react root inside the content of a tab
-const root = document.createElement("div");
-root.id = "crx-root";
+const root = document.createElement('div');
+root.id = 'crx-root';
 document.body.appendChild(root);
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        display: "flex",
-        justifyContent: "center",
-        zIndex: 10000000,
-        pointerEvents: "none",
-        alignItems: "center",
-      }}
-    >
-      <div style={{ fontSize: 100 }}>🦖</div>
+    <div className="ex-pointer-events-none ex-fixed ex-bottom-0 ex-left-0 ex-right-0 ex-top-0 ex-z-50 ex-flex ex-items-center ex-justify-center">
+      <div style={{ fontSize: 100 }}>asdf</div>
     </div>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
