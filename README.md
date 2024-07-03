@@ -1,35 +1,68 @@
-# React + TypeScript + Vite
+# Chrome extension template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Chrome Extension Template! It is designed to be an easy starting point for building an extension using:
 
-Currently, two official plugins are available:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [ShadCn](https://ui.shadcn.com/)
+- [CRXJS](https://crxjs.dev/vite-plugin/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In other words, this is what we use at [zerodays](https://github.com/zerodays).
 
-## Expanding the ESLint configuration
+**NOTE**: This template is largely based on our [Next.js template](https://github.com/zerodays/nextjs-template/) and adapted for Chrome extensions. Most of the non-Chrome extension specific documentation can be found there.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 Quick Start
 
-- Configure the top-level `parserOptions` property like this:
+Getting started with this template is straightforward. Follow these steps to create your new project using this template:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+1. **Create a new React app using this template**:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   Run the following command in your terminal to create a new project with this template:
 
-TODO:
+   ```bash
+   npx degit zerodays/chrome-extension-template your-project-name
+   ```
 
-- technologies (why crx)
-- tailwind prefix ex
+2. **Navigate into your new project folder**:
+
+   ```bash
+   cd your-project-name
+   ```
+
+3. **Install dependencies**:
+
+   ```bash
+   pnpm i
+   ```
+
+4. **Run the development server**:
+
+   ```bash
+   pnpm dev
+   ```
+
+## 🧐 What's Included?
+
+- Everything from the [Next.js template](https://github.com/zerodays/nextjs-template/) **except**:
+  - Next.js (we use pure React with Vite here).
+  - Sentry (because of potential problems with sending data from the extension).
+- [Vite](https://vitejs.dev/) for fast development and optimized production builds.
+- [CRXJS](https://crxjs.dev/vite-plugin/) Vite plugin for building Chrome extensions.
+
+## 📂 CRXJS and Chrome extension-specific configuration
+
+CRXJS allows for configuring the Chrome extension **and React build process** from the same `manifest.json` file. This template includes three entry points configured:
+
+1. **Popup** (what one sees when clicking the extension icon) - `src/app.tsx`.
+2. **Injected content script** (currently configured to show a button over the middle of every page) - `src/inject.tsx`.
+3. **Background script** (runs in the background) - `src/background.ts`.
+
+## ➖ Differences from the Next.js template
+
+In order to not break the css of the original pages when injecting content scripts, Tailwind is configured with a prefix `ex`. This means that for example `h-4` needs to be written `ex-h-4`. ShadCn is also configured to use the same prefix.
+
+## 🏗️ TODO:
+
+- Github actions for building and publishing the extension.

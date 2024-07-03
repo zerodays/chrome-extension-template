@@ -1,6 +1,6 @@
 import 'react';
 import { useTranslation } from 'react-i18next';
-import './index.css';
+import './globals.css';
 import ZodiosClientExample from './zodios-client-example';
 
 function App() {
