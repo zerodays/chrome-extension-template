@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "format": "prettier --check --ignore-path .prettierignore .",
     "format:fix": "prettier --write --ignore-path .prettierignore .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "gen-api": "infisical run --command 'openapi-zod-client \"$NEXT_PUBLIC_API_URL/docs/bundle.yml\" -o './src/zodios/index.ts' -t ./scripts/zodios-client-template.hbs' && prettier --write ./src/zodios/index.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.1",
@@ -62,6 +63,7 @@
     "globals": "^15.7.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
+    "openapi-zod-client": "^1.18.1",
     "postcss": "^8.4.39",
     "prettier": "3.3.2",
     "prettier-plugin-organize-imports": "^4.0.0",
