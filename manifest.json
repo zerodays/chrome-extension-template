@@ -13,5 +13,9 @@
       "js": ["src/inject.tsx"],
       "matches": ["https://*/*"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  }
 }
